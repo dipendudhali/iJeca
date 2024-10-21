@@ -1,0 +1,156 @@
+/* Importing font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+/* Setting font-family for body */
+body{
+font-family: "Bai Jamjuree", sans-serif;
+}
+
+/* Styling for card */
+.card{
+height: 310px;
+width: 270px;
+margin: 1rem;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+overflow: hidden;
+position: relative;
+}
+
+/* Hover effect for card image */
+.card:hover .card-img-top {
+transform: scale(1.1);
+}
+
+/* Styling for card image */
+.card-img-top{
+height: 200px;
+transition: all 0.4s ease;
+object-fit: cover;
+}
+
+/* Styling for carousel height */
+.mycr{
+height: 700px;
+}
+
+/* Styling for jumbotron */
+.jumbotron {
+background-color: #f9fafc;
+padding: 3rem;
+border-radius: 0;
+margin-bottom: 0;
+}
+
+/* Setting font weight for headings */
+h1, h2, h3, h4, h5, h6 {
+font-weight: bold;
+}
+
+/* Styling for lead text */
+.lead {
+font-size: 1.2rem;
+color: #444;
+}
+
+/* Setting vertical align for table cells */
+.table th, .table td {
+vertical-align: middle;
+}
+
+/* Styling for table header */
+.table thead th {
+font-weight: 600;
+text-transform: uppercase;
+border-top: none;
+}
+
+/* Styling for table body header */
+.table tbody th {
+font-weight: 500;
+border-top: none;
+}
+
+/* Styling for table body cells */
+.table tbody td {
+border-top: 1px solid #dee2e6;
+}
+
+/* Removing border from last row of table */
+.table tbody tr:last-child td {
+border-bottom: none;
+}
+
+/* Alternating background color for striped table */
+.table-striped tbody tr:nth-of-type(odd) {
+background-color: #f9fafc;
+}
+
+/* Hover effect for table rows */
+.table-hover tbody tr:hover {
+background-color: #f5f5f5;
+transition: all .2s ease-in-out;
+}
+
+/* Styling for mock container */
+.mock{
+background-color: #fff;
+border-radius: 10px;
+padding: 50px;
+max-width: 600px;
+margin: 0 auto;
+}
+
+/* Styling for form */
+form {
+background-color: #fff;
+padding: 40px;
+border-radius: 10px;
+box-shadow: 0px 0px 20px #dcdcdc;
+}
+
+/* Setting font-weight for form labels */
+.form-label {
+font-weight: bold;
+}
+
+/* Styling for print media */
+@media print {
+/* Setting size and margin for printed document */
+.container {
+width: 21cm;
+height: 29.7cm;
+margin: auto;
+padding: 20px;
+}
+/* Setting font size for table cells in printed document */
+.table {
+  font-size: 12px;
+}
+
+/* Hiding print button from printed document */
+.print-btn {
+  display: none;
+}
+
+/* Hiding header from printed document */
+header{
+  display: none;
+}
+
+/* Hiding navigation bar from printed document */
+nav{
+  display: none;
+}
+
+/* Hiding jumbotron from printed document */
+.jumbotron{
+  display: none;
+}
+
+/* Hiding footer from printed document */
+footer{
+  display: none
+}
+}
+
