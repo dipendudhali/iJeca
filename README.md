@@ -66,3 +66,11 @@ Follow these steps to view the iJeca application in your web browser:
     - Navigate to `http://localhost/iJeca`.
 
 You should now be able to view and interact with the iJeca application!
+# Sample User Account
+
+If you don't want to create an account, you can use the following sample credentials to log in:
+
+- **Username:** johndoe
+- **Password:** $JohnDoe12345
+
+Use these credentials to explore the features of the iJeca application without creating a new account.
