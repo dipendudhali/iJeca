@@ -2,10 +2,9 @@
 
 Watch the following video to see how the iJeca website looks and functions:
 
-<video width="600" controls>
-    <source src="https://github.com/dipendudhali/iJeca/blob/main/assets/videos/overview.mp4">
-    Your browser does not support the video tag.
-</video>
+[![iJeca Application Overview](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+
+Replace `YOUR_VIDEO_ID` with the actual YouTube video ID.
 
 # Cloning the iJeca Repository
 
