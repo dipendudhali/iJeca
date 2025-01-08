@@ -35,12 +35,10 @@
           <div class="mb-3 position-relative">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password" required>
-            <small class="form-text text-danger d-none" id="passwordError">Password must include at least one uppercase letter, one special character, and be at least 6 characters long.</small>
           </div>
           <div class="mb-3 position-relative">
             <label for="cpassword" class="form-label">Confirm Password</label>
             <input type="password" class="form-control" id="cpassword" name="cpassword" required>
-            <small class="form-text text-danger d-none" id="cpasswordError">Passwords do not match.</small>
           </div>
           <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
@@ -56,12 +54,8 @@
   // Form validation
   function validateForm() {
     const username = document.getElementById('username').value.trim();
-    const password = document.getElementById('password').value;
-    const cpassword = document.getElementById('cpassword').value;
     const phone = document.getElementById('phone').value.trim();
     const usernameError = document.getElementById('usernameError');
-    const passwordError = document.getElementById('passwordError');
-    const cpasswordError = document.getElementById('cpasswordError');
     const phoneError = document.getElementById('phoneError');
 
     let isValid = true;
@@ -74,22 +68,6 @@
       usernameError.classList.add('d-none');
     }
 
-    // Password validation
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z]).{6,}$/;
-    if (!passwordRegex.test(password)) {
-      passwordError.classList.remove('d-none');
-      isValid = false;
-    } else {
-      passwordError.classList.add('d-none');
-    }
-
-    // Confirm password validation
-    if (password !== cpassword) {
-      cpasswordError.classList.remove('d-none');
-      isValid = false;
-    } else {
-      cpasswordError.classList.add('d-none');
-    }
 
     // Phone number validation
     const phoneRegex = /^\d{10}$/;
