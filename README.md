@@ -3,7 +3,7 @@
 Watch the following video to see how the iJeca website looks and functions:
 
 <video width="600" controls>
-    <source src="assets/videos/overview.mp4" type="video/mp4">
+    <source src="https://github.com/dipendudhali/iJeca/blob/main/assets/videos/overview.mp4">
     Your browser does not support the video tag.
 </video>
 
