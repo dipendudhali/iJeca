@@ -1,10 +1,8 @@
 # iJeca Application Overview
 
-Watch the following video to see how the iJeca website looks and functions:
+Watch the following video to see how the iJeca website looks and functions. Please click on the image below to watch:
 
-[![iJeca Application Overview](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=vwDTOw_3owc)
-
-Replace `YOUR_VIDEO_ID` with the actual YouTube video ID.
+[![iJeca Application Overview](assets/videos/overview.png)](https://drive.google.com/file/d/1ILJBH-9IlExXwqI9uN6crm1SEK9wsWfB/view?usp=drive_link)
 
 # Cloning the iJeca Repository
 
