@@ -2,7 +2,7 @@
 
 Watch the following video to see how the iJeca website looks and functions:
 
-[![iJeca Application Overview](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![iJeca Application Overview](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=vwDTOw_3owc)
 
 Replace `YOUR_VIDEO_ID` with the actual YouTube video ID.
 
