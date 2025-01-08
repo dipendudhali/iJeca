@@ -9,39 +9,39 @@ while ($row = mysqli_fetch_assoc($result1)) {
 }
 ?>
 <!-- Navigation Bar-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">iJeca</a>
+    <a class="navbar-brand" href="index">iJeca</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="index">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="syllabus.php">Syllabus</a>
+          <a class="nav-link" href="syllabus">Syllabus</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Chapters</a>
           <ul class="dropdown-menu">
             <?php foreach ($chapters as $key => $value){ ?>
             <!-- Display chapter details in dropdown menu -->
-            <li><a class="dropdown-item" href="questions.php?string=<?php echo $value['id']; ?>"><?php echo $value['name']; ?></a></li>
+            <li><a class="dropdown-item" href="questions?string=<?php echo $value['id']; ?>"><?php echo $value['name']; ?></a></li>
             <?php } ?>
           </ul>
         </li>
         <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){ ?>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Score</a>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="mock.php">Mock Test</a>
+          <a class="nav-link" href="mock">Mock Test</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Contribute</a>
-        </li>
+        </li> -->
         <?php } ?>
       </ul>
       <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){ ?>
@@ -52,7 +52,7 @@ while ($row = mysqli_fetch_assoc($result1)) {
         </p>
       </div>
       <div class="d-flex ms-auto">
-        <a href="logout.php" class="btn btn-outline-danger">Logout</a>
+        <a href="logout" class="btn btn-outline-danger">Logout</a>
       </div>
       <?php }else{ ?>
       <!-- Display login and signup buttons if user is not logged in -->

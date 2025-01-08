@@ -32,10 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if ($showAlert) {
-    header("Location: index.php?loginsuccess=true");
+    header("Location: index?loginsuccess=true");
     exit();
 } else {
-    header("Location: index.php?loginsuccess=false&error=$showError");
+    header("Location: index?loginsuccess=false&error=$showError");
     exit();
 }
 ?>

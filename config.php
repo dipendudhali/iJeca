@@ -12,5 +12,5 @@
       die('Database selection failed: ' . mysqli_error($con));
   }
 
-  echo "Connection successful and database selected!";
+  //echo "Connection successful and database selected!";
 ?>

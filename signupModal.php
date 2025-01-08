@@ -7,10 +7,21 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="signupConfig.php" method="POST">
+        <form action="signupConfig.php" method="POST" onsubmit="return validateForm()">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstname" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstname" name="firstname" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastname" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastname" name="lastname" required>
+            </div>
+          </div>
           <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username" required>
+            <input type="text" class="form-control" id="username" name="username" minlength="6" required>
+            <small class="form-text text-danger d-none" id="usernameError">Username must be at least 6 characters long.</small>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
@@ -19,14 +30,17 @@
           <div class="mb-3">
             <label for="phone" class="form-label">Phone Number</label>
             <input type="tel" class="form-control" id="phone" name="phone" required>
+            <small class="form-text text-danger d-none" id="phoneError">Phone number must be exactly 10 digits long.</small>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 position-relative">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password" required>
+            <small class="form-text text-danger d-none" id="passwordError">Password must include at least one uppercase letter, one special character, and be at least 6 characters long.</small>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 position-relative">
             <label for="cpassword" class="form-label">Confirm Password</label>
             <input type="password" class="form-control" id="cpassword" name="cpassword" required>
+            <small class="form-text text-danger d-none" id="cpasswordError">Passwords do not match.</small>
           </div>
           <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
@@ -37,3 +51,55 @@
     </div>
   </div>
 </div>
+
+<script>
+  // Form validation
+  function validateForm() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+    const cpassword = document.getElementById('cpassword').value;
+    const phone = document.getElementById('phone').value.trim();
+    const usernameError = document.getElementById('usernameError');
+    const passwordError = document.getElementById('passwordError');
+    const cpasswordError = document.getElementById('cpasswordError');
+    const phoneError = document.getElementById('phoneError');
+
+    let isValid = true;
+
+    // Username validation
+    if (username.length < 6) {
+      usernameError.classList.remove('d-none');
+      isValid = false;
+    } else {
+      usernameError.classList.add('d-none');
+    }
+
+    // Password validation
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      passwordError.classList.remove('d-none');
+      isValid = false;
+    } else {
+      passwordError.classList.add('d-none');
+    }
+
+    // Confirm password validation
+    if (password !== cpassword) {
+      cpasswordError.classList.remove('d-none');
+      isValid = false;
+    } else {
+      cpasswordError.classList.add('d-none');
+    }
+
+    // Phone number validation
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+      phoneError.classList.remove('d-none');
+      isValid = false;
+    } else {
+      phoneError.classList.add('d-none');
+    }
+
+    return isValid;
+  }
+</script>

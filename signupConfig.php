@@ -6,7 +6,7 @@ $showError = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'config.php';
-
+    $name = $_POST['firstname'] . ' ' . $_POST['lastname'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -23,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         if ($password == $cpassword) {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $query = "INSERT INTO `userinfo` (username, email, phone, password) VALUES ('$username', '$email', '$phone', '$hash')";
+            // Corrected SQL syntax
+            $query = "INSERT INTO `userinfo` (`name`, `username`, `email`, `phone`, `password`) VALUES ('$name', '$username', '$email', '$phone', '$hash')";
             $result = mysqli_query($con, $query);
 
             if ($result) {
@@ -40,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if ($showAlert) {
-    header("Location: index.php?signupsuccess=true");
+    header("Location: index?signupsuccess=true");
     exit();
 } else {
-    header("Location: signup.php?signupsuccess=false&error=$showError");
+    header("Location: index?signupsuccess=false&error=$showError");
     exit();
 }
 ?>

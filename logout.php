@@ -8,7 +8,7 @@ $_SESSION['username'] = ''; // Initialize username session variable to an empty 
 $_SESSION['email'] = ''; // Initialize email session variable to an empty string
 
 // Redirect to index.php using JavaScript
-echo '<script>window.location.href="index.php";</script>';
+echo '<script>window.location.href="index";</script>';
 
 ob_end_flush(); // End output buffering and send the output to the browser
 ?>
